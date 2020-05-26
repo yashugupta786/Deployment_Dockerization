@@ -51,3 +51,5 @@ docker build -t email_service .
 
 3 Run the docker
 docker run -p 8000:8000 email_service
+
+docker ps checking the instances runing 
