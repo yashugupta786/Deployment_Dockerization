@@ -1,0 +1,36 @@
+Dockers tutorials with machine learning and deep learning services
+
+Why Dockers 
+It can be used to containerize an web app or an MLservice and can be deploy that image into some different environment
+
+
+Advantage 
+1 Environment standardization 
+2 - We just have to build once and then can be deploy anywhere 
+
+
+In VM suppose we have 4 environement ans few are geting used .the resources are wasting casues a problem .here docker can help 
+majorly we can use the resources of the image that is not geting utiize 
+
+Implementing Docker 
+
+Swagge/Flasgger can be used as UI for hiting the flask/tornado api
+Expose the endpoint with any framework 
+predict values for the global model/ pickle/h5 fle/protobuf
+
+Define the Doc Strings for flasgger in Tree shape md file type or define in Flask api itself
+  """Let's Authenticate the Banks Note 
+    This is using docstrings for specifications.
+    ---
+    parameters:
+      - name: file
+        in: formData
+        type: file
+        required: true
+      
+    responses:
+        200:
+            description: The output values
+        
+    """
+Invoking flasgger UI localhost:portnum/apidocs
