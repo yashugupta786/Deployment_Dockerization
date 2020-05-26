@@ -1,0 +1,53 @@
+installing docker
+Hyper-V and container feature should be enabled
+using command  powershell Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
+
+2) Download from dockerhub>get docker>exe installation
+if not compatibility download toolbox for docker (win version) and it will download the virtual box get install 
+
+3)after suucessful install open toolbox terminal
+docker --version
+
+(example docker run hello world)
+
+#---------------BASE IMAGE
+Download base image from docker hub -->what exactly OS u want.after that we add different component
+
+--->BASE Image(linux ubuntu)
+-----> Conda python environment
+-------> flask,flasgger
+----------> all library
+encapsulate together  into docker image then dockerize it and can be used anywhere
+
+#--------------------------------Commands docker (DOCKER FILE)----------------------
+1 From-->> get the base image from hub 
+
+2 copy --> copy the folder structure and files of webapp into the root directory of base image
+
+3 expose--> expose the port 
+
+4 workdir--> define the path of the parrent folder
+
+5 run ----> pip install -r requirement.txt
+
+6 cmd ----> python main.py
+
+Steps
+
+1 write the DOCKERFILE
+FROM continuumio/anaconda3:4.4.0
+COPY . /usr/app/
+EXPOSE 5000
+WORKDIR /usr/app/
+RUN pip install -r requirements.txt
+CMD python flask_api.py
+
+
+2 Build the Docker Image
+open docker terminal
+go to working directory on host machine where code reside
+docker build -t email_service .
+
+
+3 Run the docker
+docker run -p 8000:8000 email_service
